@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="text-red-500 text-xl">
     index
   </div>
 </template>
