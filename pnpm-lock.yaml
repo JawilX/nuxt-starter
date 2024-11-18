@@ -31,6 +31,9 @@ devDependencies:
   '@nuxt/eslint':
     specifier: ^0.6.0
     version: 0.6.0(eslint@9.13.0)(typescript@5.6.3)(vite@5.4.11)
+  '@nuxt/icon':
+    specifier: ^1.7.5
+    version: 1.7.5(vite@5.4.11)(vue@3.5.12)
   '@nuxt/image':
     specifier: ^1.8.1
     version: 1.8.1
@@ -1521,8 +1524,37 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
+  /@iconify/collections@1.0.484:
+    resolution: {integrity: sha512-b/6PlgO0BDx8ElxiceLtYigSQcKAXFPNAU8d4rOLtRvdkda1HOnAsPIqCSeuYHe3H5d9n9tdukLXM9Yv9bkgfA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+    dev: true
+
+  /@iconify/utils@2.1.33:
+    resolution: {integrity: sha512-jP9h6v/g0BIZx0p7XGJJVtkVnydtbgTgt9mVNcGDYwaa7UhdHdI9dvoq+gKj9sijMSJKxUPEG2JyjsgXjxL7Kw==}
+    dependencies:
+      '@antfu/install-pkg': 0.4.1
+      '@antfu/utils': 0.7.10
+      '@iconify/types': 2.0.0
+      debug: 4.3.7(supports-color@9.4.0)
+      kolorist: 1.8.0
+      local-pkg: 0.5.0
+      mlly: 1.7.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@iconify/vue@4.2.0-dev.2(vue@3.5.12):
+    resolution: {integrity: sha512-fHsLaBaegrXyshUR2j9sV4TXkTgRQ9FhQ9PIqWgW/dFTPcMe2uEtUr1H9XQaDTpN8F9chnVqhLH8FT9asTDaSQ==}
+    peerDependencies:
+      vue: '>=3'
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.5.12(typescript@5.6.3)
     dev: true
 
   /@ioredis/commands@1.2.0:
@@ -1839,6 +1871,29 @@ packages:
       - typescript
       - utf-8-validate
       - vite
+    dev: true
+
+  /@nuxt/icon@1.7.5(vite@5.4.11)(vue@3.5.12):
+    resolution: {integrity: sha512-9zpcjtCQHY1SanYAXLuErDy30aOJZhhHQ+ctigRcGEdOVLvaHJna8ahN/LWrvlwBv+/s/KKKb6Ycch6hxo7Ljw==}
+    dependencies:
+      '@iconify/collections': 1.0.484
+      '@iconify/types': 2.0.0
+      '@iconify/utils': 2.1.33
+      '@iconify/vue': 4.2.0-dev.2(vue@3.5.12)
+      '@nuxt/devtools-kit': 1.6.0(magicast@0.3.5)(vite@5.4.11)
+      '@nuxt/kit': 3.14.159(magicast@0.3.5)
+      local-pkg: 0.5.0
+      mlly: 1.7.3
+      ohash: 1.1.4
+      pathe: 1.1.2
+      std-env: 3.8.0
+      tinyglobby: 0.2.10
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+      - vite
+      - vue
     dev: true
 
   /@nuxt/image@1.8.1:
