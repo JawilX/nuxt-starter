@@ -1,4 +1,4 @@
-import { appDescription } from './app/constants/index'
+import { appDescription, appName, baseUrl } from './app/constants/index'
 
 export default defineNuxtConfig({
   modules: [
@@ -7,11 +7,10 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/sitemap',
   ],
 
-  devtools: {
-    enabled: true,
-  },
+  devtools: { enabled: true },
 
   app: {
     head: {
@@ -29,25 +28,19 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  future: {
-    compatibilityVersion: 4,
-  },
+  site: { url: baseUrl, name: appName },
 
-  experimental: {
-    typedPages: true,
-  },
+  future: { compatibilityVersion: 4 },
+
+  experimental: { typedPages: true },
 
   compatibilityDate: '2024-08-14',
 
   nitro: {
-    esbuild: {
-      options: {
-        target: 'esnext',
-      },
-    },
+    esbuild: { options: { target: 'esnext' } },
     prerender: {
       crawlLinks: false,
-      routes: ['/'],
+      routes: ['/sitemap.xml'],
       ignore: [],
     },
   },
@@ -55,9 +48,19 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       standalone: false,
-      nuxt: {
-        sortConfigKeys: true,
-      },
+      nuxt: { sortConfigKeys: true },
     },
+  },
+
+  sitemap: {
+    xsl: false,
+    defaults: {
+      changefreq: 'weekly',
+      priority: 1,
+      lastmod: new Date(),
+    },
+    excludeAppSources: true,
+    exclude: [],
+    urls: [`${baseUrl}/`],
   },
 })
