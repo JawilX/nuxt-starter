@@ -39,7 +39,7 @@ export default defineNuxtConfig({
   nitro: {
     esbuild: { options: { target: 'esnext' } },
     prerender: {
-      crawlLinks: false,
+      crawlLinks: true,
       routes: ['/sitemap.xml'],
       ignore: [],
     },
